@@ -1,12 +1,12 @@
 pipeline {
     agent { 
         node {
-            label 'docker-agent-python'
+            label 'jenkins-agent-goes-here'
             }
       }
-    triggers {
+      triggers {
         pollSCM '* * * * *'
-    }
+      }
     stages {
         stage('Build') {
             steps {
@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                python3 hello.py --name=Brad
+                python3 hello.py --name=Jose
                 '''
             }
         }
